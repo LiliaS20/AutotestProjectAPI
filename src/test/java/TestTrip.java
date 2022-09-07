@@ -1,5 +1,8 @@
+import io.restassured.response.Response;
 import io.restassured.specification.Argument;
+import org.apache.commons.lang3.RandomUtils;
 import org.testng.annotations.Test;
+import tripDemo.model.JsonGenerator;
 import tripDemo.model.Passenger;
 import tripDemo.model.Trip;
 
@@ -13,7 +16,27 @@ public class TestTrip {
 
     @Test
     public void createTrip() {
-        Trip trip = new Trip();
+
+        Trip trip = new Trip.Builder()
+                .withRandomMainInfo(1)
+                .withPassengers(new ArrayList<Passenger>() {{
+                    for (int i = 0; i < RandomUtils.nextInt(1, 3); i++) {
+                        add(new Passenger.Builder().withRandomCompletely().build());
+                    }
+                }}).build();
+        String body = JsonGenerator.toJsonString(trip);
+
+        Response response = given()
+                .log().all(true)
+                .contentType("application/json")
+                .accept("application/json")
+                .body(body)
+                .when()
+                .post("http://localhost:8080/trip/createTrip")
+                .thenReturn();
+
+        System.out.println(response.getBody().prettyPrint());
+     /*   Trip trip = new Trip();
 
         trip.setCompanyId(2L);
         trip.setPlane("plane№2");
@@ -36,9 +59,9 @@ public class TestTrip {
         passengerList.add(passenger1);
         passengerList.add(passenger2);
 
-        trip.setPassengerList(passengerList);
+        trip.setPassengerList(passengerList);*/
 
-      /*  given()
+    /*  given()
                 .log().all(true)
                 .contentType("application/json")
                 .accept("application/json")
@@ -47,14 +70,14 @@ public class TestTrip {
                 .post("http://localhost:8080/trip/createTrip")
                 .thenReturn();*/
 
-        Trip tripResult = given()
+        /*  Trip tripResult = given()
                 .log().all(true)
                 .contentType("application/json")
                 .accept("application/json")
                 .body(trip)
                 .when()
                 .post("http://localhost:8080/trip/createTrip")
-                .as(Trip.class);
+                .as(Trip.class);*/
     }
 
     @Test
@@ -86,7 +109,7 @@ public class TestTrip {
 
     @Test
     public void putTrip() {
-        Trip trip = new Trip();
+        /*Trip trip = new Trip();
 
         trip.setId(7L);
         trip.setCompanyId(2L);
@@ -94,16 +117,26 @@ public class TestTrip {
         trip.setTownFrom("Moscow");
         trip.setTownTo("St. Petersburg1");
         trip.setTimeOut("2021-05-16T03:31:43");
-        trip.setTimeIn("2021-05-15T05:31:43");
+        trip.setTimeIn("2021-05-15T05:31:43");*/
 
+        Trip trip = new Trip.Builder()
+                .withRandomMainInfo(1)
+                .withId(6L)
+                .withPassengers(new ArrayList<Passenger>() {{
+                    for (int i = 0; i < RandomUtils.nextInt(1, 3); i++) {
+                        add(new Passenger.Builder().withRandomCompletely().build());
+                    }
+                }}).build();
 
-        given()
+        String body = JsonGenerator.toJsonString(trip);
+        Response response = given()
                 .log().all(true)
                 .contentType("application/json")
                 .accept("application/json")
-                .body(trip)
+                .body(body)
                 .when()
                 .put("http://localhost:8080/trip/putTrip")
                 .thenReturn();
+        System.out.println(response.getBody().prettyPrint());
     }
 }

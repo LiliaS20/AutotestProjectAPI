@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b6a3a16-470f-4082-acbd-44d3194873cf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/model/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/model/Passenger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/model/TagsItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/model/Test1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/model/Trip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/test.json" afterDir="false" />
+    <list default="true" id="8b6a3a16-470f-4082-acbd-44d3194873cf" name="Changes" comment="POST GET PUT DELETE">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/model/JsonGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tripDemo/model/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tripDemo/model/Passenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tripDemo/model/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tripDemo/model/Trip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestTrip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestTrip.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +40,70 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RunManager" selected="TestNG.TestTrip.putTrip">
+    <configuration name="TestTrip.createTrip" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="AutotestProjectAPI" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestTrip" />
+      <option name="METHOD_NAME" value="createTrip" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestTrip.deleteTrip" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="AutotestProjectAPI" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestTrip" />
+      <option name="METHOD_NAME" value="deleteTrip" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestTrip.getTrip" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="AutotestProjectAPI" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestTrip" />
+      <option name="METHOD_NAME" value="getTrip" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestTrip.putTrip" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="AutotestProjectAPI" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestTrip" />
+      <option name="METHOD_NAME" value="putTrip" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.TestTrip.putTrip" />
+        <item itemvalue="TestNG.TestTrip.createTrip" />
+        <item itemvalue="TestNG.TestTrip.deleteTrip" />
+        <item itemvalue="TestNG.TestTrip.getTrip" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -58,6 +113,21 @@
       <option name="presentableId" value="Default" />
       <updated>1662406552259</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1662407359329</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662407359329</updated>
+    </task>
+    <task id="LOCAL-00002" summary="POST GET PUT DELETE">
+      <created>1662570993875</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662570993875</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -70,5 +140,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <MESSAGE value="POST GET PUT DELETE" />
+    <option name="LAST_COMMIT_MESSAGE" value="POST GET PUT DELETE" />
   </component>
 </project>
