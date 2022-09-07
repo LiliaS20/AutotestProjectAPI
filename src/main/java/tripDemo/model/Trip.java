@@ -14,5 +14,12 @@ public class Trip {
     private String townTo;
     private String timeOut;
     private String timeIn;
-    private final List<Passenger> passengerList = new ArrayList<>();
+    private List<Passenger> passengerList = new ArrayList<>();
+
+    /*public void setPassengerList(List<Passenger> passengerList) {
+
+    }*/
+    public void setPassengerList(List<Passenger> passengerList) {
+        this.passengerList = passengerList;
+    }
 }
