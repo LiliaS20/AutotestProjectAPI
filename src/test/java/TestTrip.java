@@ -1,43 +1,55 @@
 import io.restassured.response.Response;
-import io.restassured.specification.Argument;
 import org.apache.commons.lang3.RandomUtils;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import tripDemo.helper.ApiHelper;
+import tripDemo.model.ConfigQA;
 import tripDemo.model.JsonGenerator;
 import tripDemo.model.Passenger;
 import tripDemo.model.Trip;
+import tripDemo.dictionaries.IPathEnum;
+import tripDemo.dictionaries.TripPathEnum;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 public class TestTrip {
+    private Map<IPathEnum, String> serviceDataMap;
+    private Trip createTrip, putTrip;
 
-    @Test
-    public void createTrip() {
+    @BeforeClass
+    public void init() {
+        serviceDataMap = ConfigQA.getInstance().getServiceDataMap();
 
-        Trip trip = new Trip.Builder()
+        createTrip = new Trip.Builder()
                 .withRandomMainInfo(1)
                 .withPassengers(new ArrayList<Passenger>() {{
                     for (int i = 0; i < RandomUtils.nextInt(1, 3); i++) {
                         add(new Passenger.Builder().withRandomCompletely().build());
                     }
                 }}).build();
-        String body = JsonGenerator.toJsonString(trip);
 
-        Response response = given()
-                .log().all(true)
-                .contentType("application/json")
-                .accept("application/json")
-                .body(body)
-                .when()
-                .post("http://localhost:8080/trip/createTrip")
-                .thenReturn();
+        putTrip = new Trip.Builder()
+                .withRandomMainInfo(1)
+                .withId(8L)
+                .withPassengers(new ArrayList<Passenger>() {{
+                    for (int i = 0; i < RandomUtils.nextInt(1, 3); i++) {
+                        add(new Passenger.Builder().withRandomCompletely().build());
+                    }
+                }}).build();
+    }
 
+    @Test
+    public void createTrip() {
+        String body = JsonGenerator.toJsonString(createTrip);
+        String path = serviceDataMap.get(TripPathEnum.CREATE_TRIP);
+        Response response = ApiHelper.post(path, body);
         System.out.println(response.getBody().prettyPrint());
-     /*   Trip trip = new Trip();
 
+     /*   Trip trip = new Trip();
         trip.setCompanyId(2L);
         trip.setPlane("plane№2");
         trip.setTownFrom("Moscow");
@@ -59,18 +71,22 @@ public class TestTrip {
         passengerList.add(passenger1);
         passengerList.add(passenger2);
 
-        trip.setPassengerList(passengerList);*/
+        trip.setPassengerList(passengerList);
 
-    /*  given()
+          /   /   /   /   /   /   /   /   /   /   /   /   /   /   /   /
+
+          given()
                 .log().all(true)
                 .contentType("application/json")
                 .accept("application/json")
                 .body(trip)
                 .when()
                 .post("http://localhost:8080/trip/createTrip")
-                .thenReturn();*/
+                .thenReturn();
 
-        /*  Trip tripResult = given()
+          /   /   /   /   /   /   /   /   /   /   /   /   /   /   /   /
+
+                  Trip tripResult = given()
                 .log().all(true)
                 .contentType("application/json")
                 .accept("application/json")
@@ -82,35 +98,26 @@ public class TestTrip {
 
     @Test
     public void getTrip() {
-        given()
-                .log().all(true)
-                .contentType("application/json")
-                .accept("application/json")
-                .when()
-                .get("http://localhost:8080/trip/getTrip/2")
-                .then()
-                .assertThat()
-                .statusCode(200)
-                .body("townFrom", equalTo("Moscow"));
+        String path = serviceDataMap.get(TripPathEnum.GET_TRIP);
+        Response response = ApiHelper.get(path, 10);
+        System.out.println(response.getBody().prettyPrint());
     }
 
     @Test
     public void deleteTrip() {
-        given()
-                .log().all(true)
-                .contentType("application/json")
-                .accept("application/json")
-                .when()
-                .delete("http://localhost:8080/trip/deleteTrip/4")
-                .then()
-                .assertThat()
-                .statusCode(200);
+        String path = serviceDataMap.get(TripPathEnum.DELETE_TRIP);
+        Response response = ApiHelper.delete(path, 10);
+        System.out.println(response.getBody().prettyPrint());
     }
 
     @Test
     public void putTrip() {
-        /*Trip trip = new Trip();
+        String body = JsonGenerator.toJsonString(putTrip);
+        String path = serviceDataMap.get(TripPathEnum.PUT_TRIP);
+        Response response = ApiHelper.put(path, body);
+        System.out.println(response.getBody().prettyPrint());
 
+        /*Trip trip = new Trip();
         trip.setId(7L);
         trip.setCompanyId(2L);
         trip.setPlane("plane№2");
@@ -118,25 +125,5 @@ public class TestTrip {
         trip.setTownTo("St. Petersburg1");
         trip.setTimeOut("2021-05-16T03:31:43");
         trip.setTimeIn("2021-05-15T05:31:43");*/
-
-        Trip trip = new Trip.Builder()
-                .withRandomMainInfo(1)
-                .withId(6L)
-                .withPassengers(new ArrayList<Passenger>() {{
-                    for (int i = 0; i < RandomUtils.nextInt(1, 3); i++) {
-                        add(new Passenger.Builder().withRandomCompletely().build());
-                    }
-                }}).build();
-
-        String body = JsonGenerator.toJsonString(trip);
-        Response response = given()
-                .log().all(true)
-                .contentType("application/json")
-                .accept("application/json")
-                .body(body)
-                .when()
-                .put("http://localhost:8080/trip/putTrip")
-                .thenReturn();
-        System.out.println(response.getBody().prettyPrint());
     }
 }

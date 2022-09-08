@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b6a3a16-470f-4082-acbd-44d3194873cf" name="Changes" comment="POST GET PUT DELETE">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/model/JsonGenerator.java" afterDir="false" />
+    <list default="true" id="8b6a3a16-470f-4082-acbd-44d3194873cf" name="Changes" comment="добавление рандомных значений, приведение дат к типу дата">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/dictionaries/IPathEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/dictionaries/ServiceEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/dictionaries/TripPathEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/helper/ApiHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/model/ConfigQA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/config.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tripDemo/model/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tripDemo/model/Passenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tripDemo/model/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tripDemo/model/Trip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestTrip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestTrip.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -36,17 +41,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="TestNG.TestTrip.putTrip">
+}</component>
+  <component name="RunManager" selected="TestNG.TestTrip.createTrip">
     <configuration name="TestTrip.createTrip" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="AutotestProjectAPI" />
       <option name="PACKAGE_NAME" value="" />
@@ -97,8 +102,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestTrip.putTrip" />
         <item itemvalue="TestNG.TestTrip.createTrip" />
+        <item itemvalue="TestNG.TestTrip.putTrip" />
         <item itemvalue="TestNG.TestTrip.deleteTrip" />
         <item itemvalue="TestNG.TestTrip.getTrip" />
       </list>
@@ -127,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662570993875</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="добавление рандомных значений, приведение дат к типу дата">
+      <created>1662578806036</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1662578806036</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +156,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="POST GET PUT DELETE" />
-    <option name="LAST_COMMIT_MESSAGE" value="POST GET PUT DELETE" />
+    <MESSAGE value="добавление рандомных значений, приведение дат к типу дата" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавление рандомных значений, приведение дат к типу дата" />
   </component>
 </project>
