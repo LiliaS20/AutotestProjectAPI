@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b6a3a16-470f-4082-acbd-44d3194873cf" name="Changes" comment="добавление рандомных значений, приведение дат к типу дата">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/dictionaries/IPathEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/dictionaries/ServiceEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/dictionaries/TripPathEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/helper/ApiHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/model/ConfigQA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/config.conf" afterDir="false" />
+    <list default="true" id="8b6a3a16-470f-4082-acbd-44d3194873cf" name="Changes" comment="Оптимизация работы с путями и rest assured без комментариев">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/TripSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/comparator/IComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tripDemo/comparator/TripComparator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tripDemo/model/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tripDemo/model/Passenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tripDemo/model/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tripDemo/model/Trip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestTrip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestTrip.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,7 +139,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662578806036</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Оптимизация работы с путями и rest assured">
+      <created>1662660640921</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662660640921</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Оптимизация работы с путями и rest assured без комментариев">
+      <created>1662661272046</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1662661272046</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +171,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="POST GET PUT DELETE" />
     <MESSAGE value="добавление рандомных значений, приведение дат к типу дата" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавление рандомных значений, приведение дат к типу дата" />
+    <MESSAGE value="Оптимизация работы с путями и rest assured" />
+    <MESSAGE value="Оптимизация работы с путями и rest assured без комментариев" />
+    <option name="LAST_COMMIT_MESSAGE" value="Оптимизация работы с путями и rest assured без комментариев" />
   </component>
 </project>
