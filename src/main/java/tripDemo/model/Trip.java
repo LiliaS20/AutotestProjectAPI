@@ -31,9 +31,6 @@ public class Trip {
     private LocalDateTime timeIn;
     private List<Passenger> passengerList = new ArrayList<>();
 
-    /*public void setPassengerList(List<Passenger> passengerList) {
-
-    }*/
     public void setPassengerList(List<Passenger> passengerList) {
         this.passengerList = passengerList;
     }

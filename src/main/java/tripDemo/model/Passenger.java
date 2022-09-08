@@ -21,7 +21,6 @@ public class Passenger {
         }
 
         public Builder withRandomCompletely() {
-           // passenger.id = Long.valueOf(RandomStringUtils.random(1, false, true));
             passenger.firstName = RandomStringUtils.random(5, true, false);
             passenger.middleName = RandomStringUtils.random(5, true, false);
             passenger.lastName = RandomStringUtils.random(5, true, false);
