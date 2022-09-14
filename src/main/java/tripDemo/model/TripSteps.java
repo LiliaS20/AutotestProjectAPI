@@ -1,4 +1,4 @@
-package tripDemo;
+package tripDemo.model;
 
 import io.restassured.response.Response;
 import org.assertj.core.api.Assertions;
