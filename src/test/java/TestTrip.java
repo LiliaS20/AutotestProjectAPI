@@ -2,8 +2,9 @@ import io.restassured.response.Response;
 import org.apache.commons.lang3.RandomUtils;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import tripDemo.PassengerRepository;
-import tripDemo.TripRepository;
+import tripDemo.hibernate.TripEntity;
+import tripDemo.model.PassengerRepository;
+import tripDemo.model.TripRepository;
 import tripDemo.model.TripSteps;
 import tripDemo.comparator.TripComparator;
 import tripDemo.dictionaries.IPathEnum;
@@ -48,7 +49,9 @@ public class TestTrip {
     public void createTrip() {
         Trip responseTrip = TripSteps.sendPost(createTrip);
         new TripComparator(createTrip, responseTrip).compare();
-        TripRepository tripRepository = new TripRepository();
+        TripEntity tripEntity = TripRepository.getInstance().getById(TripEntity.class, responseTrip.getId());
+        System.out.println(tripEntity);
+     /*   TripRepository tripRepository = new TripRepository();
         PassengerRepository passengerRepository = new PassengerRepository();
         Trip tripFromBD = tripRepository.getById(responseTrip.getId());
         for (Passenger passenger : responseTrip.getPassengerList()) {
@@ -56,7 +59,7 @@ public class TestTrip {
             tripFromBD.getPassengerList().add(passengerFormBD);
         }
         Collections.sort(tripFromBD.getPassengerList());
-        new TripComparator(createTrip, tripFromBD).compare();
+        new TripComparator(createTrip, tripFromBD).compare();*/
     }
 
     @Test

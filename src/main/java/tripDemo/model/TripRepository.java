@@ -1,4 +1,4 @@
-package tripDemo;
+package tripDemo.model;
 
 import tripDemo.dictionaries.ServiceEnum;
 import tripDemo.model.BaseConnection;
@@ -11,8 +11,22 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class TripRepository {
-    private final Connection connection = BaseConnection.getInstance().getConnection(ServiceEnum.TRIP);
+public class TripRepository extends BaseRepository {
+
+    private static TripRepository instance;
+
+    public static TripRepository getInstance() {
+        if (instance == null) {
+            instance = new TripRepository();
+        }
+        return instance;
+    }
+
+    protected TripRepository() {
+        super(ServiceEnum.TRIP);
+    }
+
+   /* private final Connection connection = BaseConnection.getInstance().getConnection(ServiceEnum.TRIP);
 
     public Trip getById(long id) {
         String QUERY = "select * from trip where id = ?";
@@ -38,5 +52,5 @@ public class TripRepository {
             exception.printStackTrace();
         }
         return trip;
-    }
+    }*/
 }

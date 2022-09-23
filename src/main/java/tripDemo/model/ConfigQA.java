@@ -40,6 +40,8 @@ public class ConfigQA {
         connectionProperties.setUrl(config.getString("url_base"));
         connectionProperties.setUser(config.getString("user_base"));
         connectionProperties.setPassword(config.getString("password_base"));
+        connectionProperties.setDriver(config.getString("driver"));
+        connectionProperties.setDialect(config.getString("dialect"));
         baseConnectionDataMap.put(value, connectionProperties);
     }
 

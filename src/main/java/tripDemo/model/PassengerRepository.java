@@ -1,4 +1,4 @@
-package tripDemo;
+package tripDemo.model;
 
 import tripDemo.dictionaries.ServiceEnum;
 import tripDemo.model.BaseConnection;
@@ -10,6 +10,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class PassengerRepository {
+
+  /*  private static PassengerRepository instance;
+
+    public static PassengerRepository getInstance() {
+        if (instance == null) {
+            instance = new PassengerRepository();
+        }
+        return instance;
+    }
+
+    protected PassengerRepository() {
+        super(ServiceEnum.TRIP);
+    }
     private final Connection connection = BaseConnection.getInstance().getConnection(ServiceEnum.TRIP);
 
     public Passenger getById(long id) {
@@ -33,5 +46,5 @@ public class PassengerRepository {
             exception.printStackTrace();
         }
         return passenger;
-    }
+    }*/
 }
