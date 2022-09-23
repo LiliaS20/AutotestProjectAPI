@@ -25,6 +25,9 @@ public class TripEntity {
     @JoinColumn(name = "COMPANY_ID")
     private CompanyEntity company;
 
+    @Column (name = "plane")
+    private String plane;
+
     @Column (name = "TOWN_FROM")
     private String townFrom;
 

@@ -2,6 +2,7 @@ import io.restassured.response.Response;
 import org.apache.commons.lang3.RandomUtils;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import tripDemo.comparator.TripDBComparator;
 import tripDemo.hibernate.TripEntity;
 import tripDemo.model.PassengerRepository;
 import tripDemo.model.TripRepository;
@@ -50,6 +51,7 @@ public class TestTrip {
         Trip responseTrip = TripSteps.sendPost(createTrip);
         new TripComparator(createTrip, responseTrip).compare();
         TripEntity tripEntity = TripRepository.getInstance().getById(TripEntity.class, responseTrip.getId());
+        new TripDBComparator(responseTrip, tripEntity).compare();
         System.out.println(tripEntity);
      /*   TripRepository tripRepository = new TripRepository();
         PassengerRepository passengerRepository = new PassengerRepository();
