@@ -24,4 +24,21 @@ public abstract class BaseRepository {
         closeSession();
         return object;
     }
+
+    public <T> T create(T object) {
+        Session session = getSession();
+        session.beginTransaction();
+        session.save(object);
+        session.getTransaction().commit();
+        closeSession();
+        return object;
+    }
+
+    public <T> void delete(T object) {
+        Session session = getSession();
+        session.beginTransaction();
+        session.remove(object);
+        //session.getTransaction().commit();
+        closeSession();
+    }
 }

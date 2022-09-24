@@ -2,9 +2,13 @@ package tripDemo.model;
 
 import io.restassured.response.Response;
 import org.assertj.core.api.Assertions;
+import org.hibernate.Session;
+import org.testng.annotations.AfterMethod;
+import tripDemo.TripMapper;
 import tripDemo.dictionaries.IPathEnum;
 import tripDemo.dictionaries.TripPathEnum;
 import tripDemo.helper.ApiHelper;
+import tripDemo.hibernate.TripEntity;
 import tripDemo.model.ConfigQA;
 import tripDemo.model.Trip;
 
@@ -46,5 +50,12 @@ public class TripSteps {
         Trip responseTrip = response.as(Trip.class);
         Collections.sort(responseTrip.getPassengerList());
         return responseTrip;
+    }
+
+    public static Trip createTrip(Trip trip) {
+        TripMapper tripMapper = TripMapper.INSTANCE;
+        TripEntity tripEntity = tripMapper.toEntity(trip);
+        tripEntity = TripRepository.getInstance().create(tripEntity);
+        return tripMapper.toDto(tripEntity);
     }
 }

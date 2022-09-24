@@ -13,5 +13,6 @@ public interface TripMapper {
     @Mapping(target = "companyId", source = "company.id")
     Trip toDto (TripEntity tripEntity);
 
+    @Mapping (target = "company.id", source = "companyId")
     TripEntity toEntity(Trip trip);
 }
